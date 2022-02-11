@@ -1,0 +1,102 @@
+###TASK 1###
+class Person:
+    def __init__(self, first_name, last_name, age):
+        self.fname = first_name
+        self.lname = last_name
+        self.age = age
+
+    def Talk(self):
+        return "Hello, my name is {} {} and I'm {} years old".format(self.fname, self.lname, self.age)
+
+
+
+person1 = Person("John", "Smith", 30)
+person2 = Person("Mary", "Johnson", 40)
+
+print(person1.Talk())
+print(person2.Talk())
+
+
+
+###TASK 2###
+
+class Dog:
+
+    def __init__(self, Dog_age):
+        self.dAge = Dog_age
+        self.age_factor = 7
+
+
+    def human(self):
+        age = int(self.dAge * self.age_factor)
+        return (age)
+
+dog1= Dog(5)
+
+print(dog1.human())
+
+
+
+###TASK 3###
+
+CHANNELS = ["BBC", "Discovery", "TV1000"]
+
+class Controller:
+    def __init__(self, channels):
+        self.channels = channels
+        self.currentcahnnel = channels[0]
+
+
+    def first_channel(self):
+        self.currentcahnnel = self.channels[0]
+        return self.currentcahnnel
+
+    def last_channel(self):
+        self.currentcahnnel = self.channels[-1]
+        return self.currentcahnnel
+
+    def turn_channel(self, channel):
+        self.currentcahnnel = self.channels[channel -1]
+        return self.currentcahnnel
+
+
+    def next_channel(self):
+        indx = self.channels.index(self.currentcahnnel)
+        if indx == (len(self.channels) -1):
+            self.currentcahnnel = self.channels[0]
+        else:
+            self.currentcahnnel = self.channels[indx + 1]
+
+        return self.currentcahnnel
+
+    def previus_channel(self):
+        indx = self.channels.index(self.currentcahnnel)
+
+        if indx == 0:
+            self.currentcahnnel = self.channels[-1]
+        else:
+
+            self.currentcahnnel = self.channels[indx + 1]
+
+        return self.currentcahnnel
+
+    def cr_cahnnel(self):
+        return self.currentcahnnel
+
+    def is_exit(self, channel):
+        if type(channel) is int:
+            if channel < 1 or channel > len(self.channels):
+                return "no"
+        elif channel in self.channels:
+            return "yes"
+
+
+
+controller = Controller(CHANNELS)
+
+print(controller.cr_cahnnel())
+print(controller.last_channel())
+print(controller.next_channel())
+print(controller.turn_channel(2))
+print(controller.previus_channel())
+print(controller.is_exit("BBC"))

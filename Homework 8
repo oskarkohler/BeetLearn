@@ -1,0 +1,42 @@
+
+###task1###
+def oops():
+    a_list = [1, 2, 3, 4, 5]
+    a_dict = {"key1":1, "key2":2, "key3": 3}
+
+    print(a_list[6])
+    print(a_dict["key4"])
+
+def fix():
+    try:
+        oops()
+
+    except:
+        print("function was not executed")
+
+fix()
+
+###task 2###
+def numbers():
+
+
+    try:
+        a = int(input("first number"))
+        b = int(input("second number"))
+        val = a**2/b
+        print(val)
+
+    except ValueError:
+        print("Invalid input, you need to insert numbers")
+
+    except ZeroDivisionError:
+        print("you can not do division with 0")
+
+        ####ett förslag att skriva som except########
+        if  type(a) is not int and type(b) is not int:
+            print("you need to write a number ")
+
+        if b == 0:
+            print("zero is not allowed")
+        ############################################
+numbers()

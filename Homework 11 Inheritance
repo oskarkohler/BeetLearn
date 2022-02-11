@@ -1,0 +1,85 @@
+
+
+
+####taks1#####
+
+
+class Person:
+    def __init__(self, name, age, city):
+        self.name = name
+        self.age = age
+        self.city = city
+
+    def display(self):
+        print(self.name)
+        print(self.age)
+        print(self.city)
+
+
+class Teacher(Person):
+    def __init__(self, name, age, city, title, subject, pay):
+        super().__init__(name, age, city)
+        self.title = title
+        self.subject = subject
+        self.pay = pay
+
+    def show(self):
+        print(self.name)
+        print(self.age)
+        print(self.city)
+        print(self.title)
+        print(self.subject)
+        print(self.pay)
+
+
+teacher1 = Teacher('Lisa', 41, 'stockholm', 'professor', "math", 50000,)
+print(Teacher.show(teacher1))
+
+class Student(Person):
+    def __init__(self, name, age, city, program, startyear, grade):
+        super().__init__(name, age, city)
+        self.program = program
+        self.startyear = startyear
+        self.grade = grade
+
+    def result(self):
+        print(self.name)
+        print(self.age)
+        print(self.city)
+        print(self.program)
+        print(self.startyear)
+        print(self.grade)
+
+student1 = Student('John', 23, 'Gothenburg', 'Programming', 2021, 'A')
+print("")
+print(Student.result(student1))
+
+
+
+###taks 2####
+class Standard:
+    def __init__(self):
+        pass
+class Mathematician(Standard):
+    def square_nums(self, list):
+        squared_numbers = [number ** 2 for number in list]
+        return squared_numbers
+    def remove_positives(self, list):
+        self.negatives = [number for number in list if number < 0]
+        return self.negatives
+    def filter_leaps(self, list):
+        self.leap_year = [number for number in list if number % 4 == 0]
+        return self.leap_year
+
+m = Mathematician()
+
+assert m.square_nums([7, 11, 5, 4]) == [49, 121, 25, 16]
+
+assert m.remove_positives([26, -11, -8, 13, -90]) == [-11, -8, -90]
+
+assert m.filter_leaps([2001, 1884, 1995, 2003, 2020]) == [1884, 2020]
+
+
+
+####task3 ####
+

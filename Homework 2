@@ -1,0 +1,36 @@
+from datetime import date
+import calendar
+
+####task 1#####
+####Greeting program#####
+
+name = input("What is your name? ")
+today = date.today()
+
+print(f'Good day {name}! {calendar.day_name[today.weekday()]} is a perfect day to learn python.')
+
+####task 2#####
+####Manipulate strings#####
+
+Fname = "Oskar"
+Lname = "Kohler"
+
+print('Hello ' + Fname + ' ' + Lname + ', ' + 'what a lovley day it is today! ')
+
+####task 3#####
+####Using Python as a calculator#####
+
+x = 5
+y = 5
+
+print(x + y)
+print(x - y)
+print(x / y)
+print(x * y)
+print(x ** y)
+print(x % y)
+print(x // y)
+
+
+
+

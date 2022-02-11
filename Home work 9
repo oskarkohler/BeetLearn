@@ -1,0 +1,9 @@
+###task1###
+
+#f =open("myfile.txt", "w")
+#f = f.write('Hello file world!')
+
+#r = open("myfile.txt", "r")
+
+#print(r.read())
+#r.close()
